@@ -143,7 +143,10 @@ configure your .eslintrc in the following way:
 
 ## Advanced usage
 
-`useYieldState` is actually a wrapper over the more complex and more versatile function `useYield`.
+`useYieldState` and `useYieldReducer` are actually just thin wrappers over the more complex and 
+more versatile function `useYield`.
+
+**Use it with care and maximize your awareness about undesired side effects**
 
 Here is an absolute equivalent of the 1st example with the usage of `useYield`:
 
