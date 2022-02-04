@@ -3,7 +3,7 @@ import fastDeepEqual from 'fast-deep-equal/es6'
 
 export default function useYield (initialState) {
   if (!(typeof initialState === 'object' && initialState instanceof Object)) {
-    throw new Error('useAsyncState only accepts object as initialState')
+    throw new Error('useYield only accepts object as initialState')
   }
 
   const state = useRef(initialState)

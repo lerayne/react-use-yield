@@ -86,13 +86,16 @@ function MyComponent () {
 
   const [{ posts, users }, dispatch] = useYieldReducer(
     async function * (getState, signal, action) {
+      // Take note that ANY execution of this function, despite the action called, will call 
+      // abortController.abort() for it's previous call, so "reset" action will abort "reload"
+      // action if it hasn't beed flushed to state
       switch (action) {
         case 'reset':
           yield {
             posts: [],
             users: []
           }
-          // don't forget reak if you're using async generator
+          // don't forget to break if you're using async generator
           // when using async function - it's safe to just return new state w/o break
           break
         
@@ -111,7 +114,7 @@ function MyComponent () {
           }
       }
     },
-    [startIndex, action],
+    [startIndex],
     { posts: [], users: [] }
   )
 
@@ -143,7 +146,10 @@ configure your .eslintrc in the following way:
 
 ## Advanced usage
 
-`useYieldState` is actually a wrapper over the more complex and more versatile function `useYield`.
+`useYieldState` and `useYieldReducer` are actually just thin wrappers over the more complex and 
+more versatile function `useYield`.
+
+**Use it with care and maximize your awareness about undesired side effects**
 
 Here is an absolute equivalent of the 1st example with the usage of `useYield`:
 
