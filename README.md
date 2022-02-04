@@ -86,6 +86,9 @@ function MyComponent () {
 
   const [{ posts, users }, dispatch] = useYieldReducer(
     async function * (getState, signal, action) {
+      // Take note that ANY execution of this function, despite the action called, will call 
+      // abortController.abort() for it's previous call, so "reset" action will abort "reload"
+      // action if it hasn't beed flushed to state
       switch (action) {
         case 'reset':
           yield {
