@@ -95,7 +95,7 @@ function MyComponent () {
             posts: [],
             users: []
           }
-          // don't forget reak if you're using async generator
+          // don't forget to break if you're using async generator
           // when using async function - it's safe to just return new state w/o break
           break
         
