@@ -33,7 +33,10 @@ function MyComponent () {
       // let's say we need to ask for users mentioned in posts that we need to 
       // fetch here call of getState() returns current state after previous 
       // update
-      const neededUserIds = getUniqueUserIds(getState().posts, getState().users)
+      const neededUserIds = getUniqueUserIds(
+        getState().posts, 
+        getState().users
+      )
 
       const users = await fetchJSON(
         `${API_URL}/users?ids=${neededUserIds}`, 
@@ -200,7 +203,10 @@ function MyComponent () {
 
       yield { posts }
 
-      const neededUserIds = getUniqueUserIds(getState().posts, getState().users)
+      const neededUserIds = getUniqueUserIds(
+        getState().posts, 
+        getState().users
+      )
 
       const users = await fetchJSON(
         `${API_URL}/users?ids=${neededUserIds}`, 
