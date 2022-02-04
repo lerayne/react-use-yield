@@ -1,6 +1,7 @@
 .idea
 /node_modules
 /test
+/wip
 .npmrc
 .nvmrc
 package-lock.json
