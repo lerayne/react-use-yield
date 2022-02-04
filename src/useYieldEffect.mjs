@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import useYield from './useYield.mjs'
+import useYield from './useYield'
 
 //wrapper that runs in the same way as useAbortableGenerator
 export default function useYieldEffect (initialState, stateChanger, deps) {
