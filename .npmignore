@@ -1,0 +1,8 @@
+.idea
+/node_modules
+/test
+.npmrc
+.nvmrc
+package-lock.json
+gulpfile.js
+.babelrc
