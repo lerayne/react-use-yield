@@ -1,10 +1,12 @@
 {
   "name": "react-use-yield",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Async hooks for react",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib --source-maps",
+    "publish-prod": "npm publish",
+    "publish-next": "npm publish --tag next",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,8 +24,8 @@
   },
   "homepage": "https://github.com/lerayne/react-use-yield#readme",
   "engines": {
-    "node": "12.22.10",
-    "npm": "6.14.16"
+    "node": ">=12.22.10",
+    "npm": ">=6.14.16"
   },
   "peerDependencies": {
     "core-js": ">=3.2.0",

@@ -34,7 +34,7 @@ export default function useYield (initialState) {
 
   // this function is always the same, so it's safe to include it into deps
   const run = useCallback((stateChanger, options) => {
-    const abortController = options?.aborter ?? new window.AbortController()
+    const abortController = options?.abortable ?? new window.AbortController()
 
     function pull (asyncGenerator) {
       function onYield ({ done, value }) {
@@ -47,7 +47,7 @@ export default function useYield (initialState) {
       asyncGenerator.next().then(onYield)
     }
 
-    const stateChangerResult = stateChanger(getState, abortController.signal)
+    const stateChangerResult = stateChanger(getState, abortController.signal, options.action)
 
     if (stateChangerResult.next) {
       // if generator is passed as stateChanger

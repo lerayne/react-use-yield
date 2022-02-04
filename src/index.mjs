@@ -1,6 +1,7 @@
 import useYield from './useYield'
-import useYieldSingle from './useYieldSingle'
+import useYieldState from './useYieldState'
+import useYieldReducer from './useYieldReducer'
 
-const defaults = { useYield, useYieldSingle }
-export { useYield, useYieldSingle }
+const defaults = { useYield, useYieldState, useYieldReducer }
+export { useYield, useYieldState, useYieldReducer }
 export default defaults

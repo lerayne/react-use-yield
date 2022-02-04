@@ -9,3 +9,4 @@ package-lock.json
 gulpfile.js
 .babelrc
 babel.config.json
+.eslintrc.js
