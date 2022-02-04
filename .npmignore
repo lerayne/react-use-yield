@@ -2,6 +2,7 @@
 /node_modules
 /test
 /wip
+/examples
 .npmrc
 .nvmrc
 package-lock.json
