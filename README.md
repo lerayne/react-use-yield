@@ -114,7 +114,7 @@ function MyComponent () {
           }
       }
     },
-    [startIndex, action],
+    [startIndex],
     { posts: [], users: [] }
   )
 
