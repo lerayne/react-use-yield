@@ -1,5 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
 import { useCallback, useRef, useState } from 'react'
-import fastDeepEqual from 'fast-deep-equal/es6'
+import fastDeepEqual                     from 'fast-deep-equal/es6'
 
 export default function useYield (initialState) {
   if (!(typeof initialState === 'object' && initialState instanceof Object)) {
@@ -7,11 +8,11 @@ export default function useYield (initialState) {
   }
 
   const state = useRef(initialState)
-  const [, setCounter] = useState(0)
+  // setCounter is used here only to force a render
+  // eslint-disable-next-line react/hook-use-state,id-match
+  const [_, setCounter] = useState(0)
 
-  const getState = useCallback(() => {
-    return { ...state.current }
-  }, [state])
+  const getState = useCallback(() => ({ ...state.current }), [state])
 
   const updateState = useCallback((value, signal = null) => {
     // it's important to return the same object, if no changes to the state was made, in this

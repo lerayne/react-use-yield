@@ -1,16 +1,10 @@
+// eslint-disable-next-line import/no-unused-modules,import/unambiguous
 module.exports = {
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    babelOptions: {
-      presets: ['@babel/preset-react']
-    }
-  },
-  extends: ['standard', 'standard-jsx'],
-  plugins: ['react', 'react-hooks'],
-  rules: {
-    'react-hooks/rules-of-hooks': 'error',
+  'extends': ['anrom'],
+  'rules':   {
     'react-hooks/exhaustive-deps': ['error', {
-      additionalHooks: '^useYield[A-Z]'
-    }]
-  }
+      additionalHooks: '^useYield[A-Z]',
+    }],
+  },
+  'ignorePatterns': ['./lib/**'], 
 }
